@@ -69,7 +69,7 @@ export function App (sources) {
 
     Object.assign(data, streamData) // merge updated properties from a streamData event object into app data.
 
-    // Crappy "work out what event it was" code.
+    // Crappy "compute state from different event input data" code.
     data.isTick = streamData.hasOwnProperty('i') // if stream event has i, we know this is a tick.
     data.counter = data.isTick ? data.counter + 1 : data.counter // only increment on an a periodic tick (incl zero-eth tick)
     data.reset = streamData.reset && streamData.reset === true // be strict on value of reset input. false for all other things.
