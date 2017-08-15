@@ -80,6 +80,7 @@ export function App (sources) {
     // TODO Consider emitting event here for counter? What's better, here or the periodic$ listener?
 
     // Actual html structure of the app.
+    // TODO build a bigger app and break up into sub-apps / components or whatever.
     return div('.app', {}, [
       // TODO What about using DOM to store state, and sources.DOM to get a stream of changes from it?
       fieldset('', {}, [
