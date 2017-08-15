@@ -72,6 +72,7 @@ export function App (sources) {
     // Crappy "work out what event it was" code.
     data.isTick = streamData.hasOwnProperty('i') // if stream event has i, we know this is a tick.
     data.counter = data.isTick ? data.counter + 1 : data.counter // only increment on an a periodic tick (incl zero-eth tick)
+    data.reset = streamData.reset && streamData.reset === true // be strict on value of reset input. false for all other things.
 
     // After the data updates are computed.
     console.log('vtree$ streamData:', streamData)
