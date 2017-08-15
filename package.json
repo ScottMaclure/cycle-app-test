@@ -1,0 +1,25 @@
+{
+  "name": "test-cyclejs-app",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "cycle-scripts": "1.1.0"
+  },
+  "dependencies": {
+    "@cycle/dom": "^18.1.0",
+    "@cycle/run": "^3.2.0",
+    "@cycle/storage": "^4.1.1",
+    "xstream": "^10.9.0"
+  },
+  "scripts": {
+    "start": "cycle-scripts start",
+    "test": "cycle-scripts test",
+    "build": "cycle-scripts build",
+    "eject": "cycle-scripts eject"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  }
+}
