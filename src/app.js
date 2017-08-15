@@ -1,4 +1,4 @@
-import {div, h1, input, button, fieldset, legend, small} from '@cycle/dom'
+import {div, span, strong, h1, input, button, fieldset, legend} from '@cycle/dom'
 import xs from 'xstream'
 
 // sources are incoming messages from drivers?
@@ -84,8 +84,12 @@ export function App (sources) {
       fieldset('', {}, [
         legend('Circlejs Testing Ticks'),
         input('.' + counterName, { attrs: { type: 'hidden', value: data.counter }}),
-        div('' + data.counter + ' seconds elapsed' + (data.isTick ? ' (tick)' : '')),
-        div([small('(Running for ' + numTicks + ' seconds total.)')]),
+        div([
+          div('Will remember previous tick in localStorage. Refresh browser to resume tick counting. Try resetting during ticks.'),
+          strong(data.counter),
+          span(' seconds elapsed' + (data.isTick ? ' (tick)' : '')),
+          span('', { attrs: { style: 'margin-left: 0.5em'}}, '(Running for ' + numTicks + ' seconds total.)')
+        ]),
         button('.reset', 'reset ticks counter')
       ])
     ])
